@@ -15,13 +15,29 @@
   <body>
     <div id="Page">
       <h2 class="Title">Dada Redux <span>Note</span>Pad</h2>
+
       <input id="TitleInput" type="text" placeholder="Note Title" />
+
       <textarea
         placeholder="Write a note..."
         name="TextHolder"
         id="NoteText"
         rows="8"
       ></textarea>
+
+      <div class="Box">
+        <div class="Circle First"><span>✓</span></div>
+        <div class="Circle Second"><span>✓</span></div>
+        <div class="Circle Third"><span>✓</span></div>
+        <div class="Circle Fourth"><span>✓</span></div>
+        <div class="Circle Fifth"><span>✓</span></div>
+        <button id="Save">Save ✓</button>
+      </div>
+
+      <div id="SearchBar">
+        <input placeholder="Search..." type="text" />
+        <img src="./Icons/Search.svg" alt="" />
+      </div>
     </div>
 
     <script src="./Notepad.js"></script>

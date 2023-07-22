@@ -14,6 +14,22 @@ html {
   align-items: center;
 }
 
+@mixin Circle() {
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+  border-radius: 50px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease 0s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    opacity: 0.8;
+    transform: translateY(-1px);
+  }
+}
+
 body {
   background-color: #ede7f6;
 }
@@ -44,5 +60,76 @@ body {
     border: 1px solid rgb(126, 87, 194);
     outline-color: rgb(81, 45, 168);
     border-radius: 7px;
+  }
+  .Box {
+    width: 30%;
+    margin: 14px auto 0;
+    text-align: left;
+    padding: 0 10px;
+    @include flexCenter();
+    justify-content: flex-start;
+    .Circle {
+      @include Circle();
+      cursor: pointer;
+
+      > span {
+        font-size: 18px;
+        display: none;
+      }
+    }
+    .First {
+      background-color: rgb(240, 98, 146);
+    }
+    .Second {
+      background-color: rgb(186, 104, 200);
+    }
+    .Third {
+      background-color: rgb(79, 195, 247);
+    }
+    .Fourth {
+      background-color: rgb(255, 213, 79);
+    }
+    .Fifth {
+      background-color: rgb(174, 213, 129);
+    }
+    > button {
+      padding: 10px 15px;
+      background-color: rgb(126, 87, 194);
+      border-radius: 10px;
+      border: 1px;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+        rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+      font-weight: 500;
+      color: white;
+      transition: all 0.2s ease 0s;
+      margin-left: auto;
+      cursor: pointer;
+      &:hover {
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px,
+          rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px,
+          rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px,
+          rgba(0, 0, 0, 0.07) 0px 32px 64px;
+      }
+    }
+  }
+  #SearchBar {
+    position: relative;
+    width: 32%;
+    margin: 20px auto 5px;
+    > input {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      border: 1px solid rgb(126, 87, 194);
+      outline-color: rgb(81, 45, 168);
+      border-radius: 7px;
+    }
+    > img {
+      position: absolute;
+      right: 12px;
+      width: 22px;
+      height: 22px;
+      top: 7px;
+    }
   }
 }
