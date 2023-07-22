@@ -1,0 +1,44 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto Mono", monospace;
+}
+
+body {
+  background-color: #ede7f6;
+}
+
+#Page {
+  padding: 20px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#Page > .Title {
+  text-align: center;
+}
+#Page > .Title > span {
+  color: rgb(126, 87, 194);
+}
+#Page #TitleInput {
+  width: 30%;
+  padding: 10px;
+  border: 1px solid rgb(126, 87, 194);
+  outline-color: rgb(81, 45, 168);
+  border-radius: 7px;
+  margin-top: 20px;
+}
+#Page #NoteText {
+  width: 30%;
+  padding: 10px;
+  margin-top: 25px;
+  border: 1px solid rgb(126, 87, 194);
+  outline-color: rgb(81, 45, 168);
+  border-radius: 7px;
+}
