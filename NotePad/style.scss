@@ -138,6 +138,7 @@ body {
     margin: 20px auto;
     min-height: 384px;
     @include flexCenter();
+    flex-wrap: wrap;
     .Card {
       width: 300px;
       height: 350px;
