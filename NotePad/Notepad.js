@@ -3,7 +3,7 @@ const Circles = document.querySelectorAll(".Circle");
 for (let Circle of Circles) {
   Circle.addEventListener("click", (e) => {
     if (Circle.id == e.target.id) {
-      Circle.firstElementChild.style.display = "initial";
+      Circle.firstElementChild.style.display = "inline";
     }
     for (let circle1 of Circles) {
       if (circle1.id != e.target.id) {
@@ -36,3 +36,33 @@ const NoteColors = [
     h4Color: "rgba(174, 213, 129, 0.4)",
   },
 ];
+
+const Save = document.getElementById("Save");
+const TitleInput = document.getElementById("TitleInput");
+const NoteText = document.getElementById("NoteText");
+
+
+
+
+
+Save.addEventListener("click", (e) => {
+  // input checks
+  if (!TitleInput.value) {
+    alert("Make a Title ");
+    return;
+  } else if (!NoteText.value) {
+    alert("Write a Note");
+    return;
+  }
+  for (let Circle of Circles) {
+    if (Circle.firstElementChild.style.display === "inline") {
+      check = true;
+      break;
+    }
+  }
+  if (check == false) {
+    alert("Pick a Color");
+    return;
+  }
+  // Note Creation
+});
