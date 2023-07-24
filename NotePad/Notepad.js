@@ -1,5 +1,6 @@
 const Circles = document.querySelectorAll(".Circle");
 let CardArr = document.getElementsByClassName("Card");
+let Search = document.getElementById("Search");
 
 for (let Circle of Circles) {
   Circle.addEventListener("click", (e) => {
@@ -118,3 +119,21 @@ function CardRemover() {
 }
 
 CardRemover();
+
+Search.addEventListener("keyup", (e) => {
+  for (let card of CardArr) {
+    if (
+      card.firstElementChild.textContent
+        .toLowerCase()
+        .includes(e.target.value.toLowerCase().trim()) ||
+      card.lastElementChild.textContent
+        .toLowerCase()
+        .includes(e.target.value.toLowerCase().trim())
+    ) {
+      card.style.display = "inline-block";
+    } else {
+      card.style.display = "none";
+    }
+  }
+  e.target.value;
+});
