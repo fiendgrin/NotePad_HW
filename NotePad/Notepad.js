@@ -1,12 +1,14 @@
 const Circles = document.querySelectorAll(".Circle");
+let CardArr = document.getElementsByClassName("Card");
 
 for (let Circle of Circles) {
   Circle.addEventListener("click", (e) => {
-    if (Circle.id == e.target.id) {
-      Circle.firstElementChild.style.display = "inline";
+    if (Circle.firstElementChild.style.display == "inline") {
+      return;
     }
+    e.target.firstElementChild.style.display = "inline";
     for (let circle1 of Circles) {
-      if (circle1.id != e.target.id) {
+      if (circle1 != e.target) {
         circle1.firstElementChild.style.display = "none";
       }
     }
@@ -40,12 +42,12 @@ const NoteColors = [
 const Save = document.getElementById("Save");
 const TitleInput = document.getElementById("TitleInput");
 const NoteText = document.getElementById("NoteText");
-const Cards = document.getElementById("Cards");
+let Cards = document.getElementById("Cards");
 
 function NoteMaker(id, borderColor, h4Color, h4Text, pText) {
   return `<div style="border: 2px dashed ${borderColor};" CardId=${id} class="Card">
           <h4 style="background-color: ${h4Color};" class="Cardh4">
-            ${h4Text} <img src="./Icons/Trash.svg" alt="" />
+            ${h4Text} <img class="Trash" src="./Icons/Trash.svg" alt="" />
           </h4>
           <p>
             ${pText}
@@ -100,4 +102,19 @@ Save.addEventListener("click", (e) => {
   for (let Circle of Circles) {
     Circle.firstElementChild.style.display = "none";
   }
+  CardArr = document.getElementsByClassName("Card");
+  CardRemover();
 });
+
+function CardRemover() {
+  for (let Card of CardArr) {
+    Card.firstElementChild.firstElementChild.addEventListener("click", (e) => {
+      if (!confirm("Are you sure?")) {
+        return;
+      }
+      e.target.parentElement.parentElement.remove();
+    });
+  }
+}
+
+CardRemover();
